@@ -1,0 +1,409 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #f4f8f7;
+  color: #111;
+  font-family: 'Patrick Hand SC', cursive;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background: rgba(230, 201, 168, 0.9);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar .logo {
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar .nav-links li a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-links li a:hover {
+  color: #e6c9a8;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: url("../images/hero-maasai.jpg") center/cover no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.1));
+}
+
+.hero-text {
+  position: relative;
+  text-align: center;
+  color: white;
+  padding-bottom: 60px;
+  max-width: 900px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.hero-text p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.hero-buttons {
+  margin-top: 25px;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 12px 26px;
+  border-radius: 30px;
+  margin: 0 8px;
+  transition: all 0.3s ease;
+}
+
+.primary {
+  background: #e6c9a8;
+  color: #000;
+}
+
+.secondary {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* BENTO */
+.bento {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 80px 10%;
+  background: #f4f8f7;
+}
+
+.bento-card {
+  position: relative;
+  height: 260px;
+  border-radius: 20px;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  transition: all 0.4s ease;
+}
+
+.bento-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.85);
+}
+
+.bento-text {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  z-index: 2;
+}
+
+.bento-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.08);
+  z-index: 1;
+}
+
+/* Hover effects */
+.bento:hover .bento-card {
+  opacity: 0.4;
+}
+
+.bento-card:hover {
+  opacity: 1 !important;
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(230, 201, 168, 0.6);
+}
+
+/* ANIMATIONS */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1.2s ease forwards;
+}
+
+.fade-delay-1 { animation-delay: 0.3s; }
+.fade-delay-2 { animation-delay: 0.6s; }
+.fade-delay-3 { animation-delay: 0.9s; }
+.fade-delay-4 { animation-delay: 1.2s; }
+.fade-delay-5 { animation-delay: 1.5s; }
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+/* PAGE HERO */
+.page-hero {
+  height: 50vh;
+  background: url("../images/classes.jpg") center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+.page-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.1));
+}
+
+.page-hero-text {
+  position: relative;
+  color: white;
+  padding: 40px 10%;
+}
+
+.page-hero-text h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+}
+
+.page-hero-text p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* BLOG CONTENT */
+.blog-content {
+  padding: 60px 10%;
+  background: #f4f8f7;
+}
+
+.blog-post {
+  max-width: 800px;
+  margin-bottom: 50px;
+}
+
+.blog-post h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.blog-post p,
+.blog-post li {
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.blog-post ul {
+  padding-left: 20px;
+}
+
+.contact-buttons {
+  margin-top: 20px;
+}
+/* ART GRID */
+.art-grid {
+  padding: 80px 10%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  background: #f4f8f7;
+}
+
+.art-card {
+  background: rgba(255,255,255,0.6);
+  border-radius: 20px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  transition: transform 0.4s ease;
+}
+
+.art-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(230, 201, 168, 0.6);
+}
+
+.art-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.art-info {
+  padding: 20px;
+}
+
+.art-info h3 {
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+}
+
+.art-info p {
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+.art-actions {
+  margin-top: 15px;
+}
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 1024px) {
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-text p {
+    font-size: 1.1rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Navbar becomes stacked */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .navbar .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    margin: 8px 0;
+    width: 80%;
+    text-align: center;
+  }
+
+  /* Bento cards 1 column */
+  .bento {
+    grid-template-columns: 1fr;
+    padding: 40px 5%;
+  }
+
+  /* Art grid 1 column */
+  .art-grid {
+    grid-template-columns: 1fr;
+    padding: 40px 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text p {
+    font-size: 0.95rem;
+  }
+
+  .bento-card {
+    height: 200px;
+  }
+
+  .art-card img {
+    height: 200px;
+  }
+}
+/* CONTACT SECTION */
+.contact-section {
+  padding: 80px 10%;
+  background: rgba(10,10,26,0.8); /* semi-transparent space overlay */
+  text-align: center;
+  border-top: 2px solid rgba(255,255,255,0.1);
+}
+
+.contact-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.contact-section p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #dddddd;
+}
+
+.contact-section .contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contact-section .btn {
+  font-size: 1rem;
+  padding: 12px 26px;
+  border-radius: 30px;
+}
+
+.contact-section .btn.primary {
+  background: #e6c9a8;
+  color: #111;
+}
+
+.contact-section .btn.secondary {
+  background: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+
+.contact-section .btn:hover {
+  transform: scale(1.05);
+}
